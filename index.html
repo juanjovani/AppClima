@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,17 +11,65 @@
             display: grid;
             place-items: center;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
-            background-color: aquamarine;
-            color: white;
+            margin: 0;
+            transition: background-color 0.3s ease;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #imagenContainer {
+            margin-top: 20px;
+            max-width: 100%;
+        }
+
+    
+        .frio {
+            background-color: #00568f; 
+        }
+
+        .cool {
+            background-color: #007a33; 
+        }
+
+        .calor {
+            background-color: #720f04; 
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>App de Clima</h1>
-        <h2> <p id="temperatura">Temperatura ºC: </p></h2>
-        <h2><p id="city">Ciudad: </p></h2>
+        <h2 id="ciudad">Ciudad: <span></span></h2>
+        <h2 id="temperatura"><span></span>°C</h2>
     </div>
+
+    <button id="miBoton">Obtener Clima</button>
+
+    <div id="imagenContainer"></div>
+     
+    <form id="locationForm" action="" method="post">
+        <ul>
+            <li>
+                <label for="ciudad">Nombre ciudad:</label>
+                <input type="text" id="ciudadInput" name="ciudad" />
+                <button type="submit" id="obtenerManual">Obtener manual</button>
+            </li>
+        </ul>
+    </form>
     <script src="./app.js"></script>
 </body>
 </html>
